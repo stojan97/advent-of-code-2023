@@ -18,9 +18,8 @@ def get_matching(cards):
     card_score = []
 
     for i, (winning, your_card) in enumerate(cards):
-        res = winning.intersection(your_card)
-        matching = len(res)
-        card_score.append(matching)
+        intersection = winning.intersection(your_card)
+        card_score.append(len(intersection))
 
     return card_score
 
