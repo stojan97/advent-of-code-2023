@@ -24,7 +24,6 @@ def get_how_many_ways(time, record):
     if not has_new_record(time // 2):
         return 0
 
-    # low
     low, high = 0, time // 2
 
     while low < high:
