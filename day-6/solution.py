@@ -1,6 +1,5 @@
 import math
 import re
-import time
 
 
 def get_input():
