@@ -23,8 +23,8 @@ def get_how_many_ways(time, record):
     if not has_new_record(time // 2):
         return 0
 
-    # Binary search the start of the (00000011110000) subarray
-    # since the result is symmetric x1 x2 x3 (peak) x2 x1
+    # Binary search the start point of the 1s subarray (000000[1111]0000)
+    # since the result is symmetric (x1 x2 peak1 peak2 x2 x1) or (x1 x2 peak x2 x1)
     # we can figure out the end point mathematically
 
     low, high = 0, time // 2
