@@ -20,6 +20,7 @@ def get_how_many_ways(time, record):
     # x1 = record .... peak .... x2 = record
     # result is equal to
     # x1 + 1 .... peak .... x2 - 1
+    # O(1) solution
 
     a, b, c = -1, time, -record
 
