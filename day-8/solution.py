@@ -31,12 +31,12 @@ def get_steps_for_node(node, instructions, edges):
         i = (i + 1) % len(instructions)
         s += 1
 
-    return s
+    return node, s
 
 
 def part1(input):
     instructions, edges = input
-    s = get_steps_for_node('AAA', instructions, edges)
+    s = get_steps_for_node('AAA', instructions, edges)[1]
     return s
 
 
@@ -44,9 +44,9 @@ def part2(input):
     instructions, edges = input
     all_nodes = [k for k in edges.keys() if k.endswith('A')]
     res = 1
-
+    # Assumption: cycleLength == cycleOffset (turns out it is correct)
     for node in all_nodes:
-        steps = get_steps_for_node(node, instructions, edges)
+        last_node, steps = get_steps_for_node(node, instructions, edges)
         res = lcm(res, steps)
 
     return res
