@@ -44,7 +44,9 @@ def part2(input):
     instructions, edges = input
     all_nodes = [k for k in edges.keys() if k.endswith('A')]
     res = 1
-    # Assumption: cycleLength == cycleOffset (turns out it is correct)
+    # Assumption: nodeCycleLength == nodeCycleOffset (turns out it is correct)
+    # we can just find the common multiple off all cycles steps
+
     for node in all_nodes:
         last_node, steps = get_steps_for_node(node, instructions, edges)
         res = lcm(res, steps)
